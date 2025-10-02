@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Insignia Group</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <h1>Insignia Group</h1>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="services.html">SERVICES</a></li>
+                <li><a href="portfolio.html" class="active">PORTFOLIO</a></li>
+                <li><a href="about.html">ABOUT</a></li>
+                <li><a href="contact.html">CONTACT</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Portfolio Hero -->
+    <section class="portfolio-hero-minimal">
+        <div class="hero-overlay"></div>
+        <div class="container">
+            <div class="portfolio-hero-content">
+                <h1 class="portfolio-title">Portfolio</h1>
+                <div class="portfolio-stats-bar">
+                    <div class="stat-item">
+                        <span class="stat-number">392</span>
+                        <span class="stat-label">Units Delivered</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">$450M+</span>
+                        <span class="stat-label">Project Value</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">5</span>
+                        <span class="stat-label">NYC Boroughs</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">19</span>
+                        <span class="stat-label">Years Experience</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Portfolio Grid -->
+    <section class="portfolio-grid-section">
+        <div class="container">
+            <!-- Filter Bar -->
+            <div class="filter-bar">
+                <div class="filter-group">
+                    <label class="filter-label">Property Type</label>
+                    <div class="portfolio-filters">
+                        <button class="filter-btn active" data-filter="all">All</button>
+                        <button class="filter-btn" data-filter="residential">Residential</button>
+                        <button class="filter-btn" data-filter="commercial">Commercial</button>
+                        <button class="filter-btn" data-filter="mixed-use">Mixed-Use</button>
+                    </div>
+                </div>
+                <div class="results-count">
+                    <span class="count">4</span> Properties
+                </div>
+            </div>
+
+            <div class="portfolio-grid-modern">
+                <div class="portfolio-card" data-category="residential">
+                    <a href="#" class="portfolio-link">
+                        <div class="portfolio-image-container">
+                            <img src="https://img1.wsimg.com/isteam/ip/be1a9a04-7abb-4d85-84ab-58d85f335942/fc48538c-9b7d-45e5-8f0b-c881fd77fb09.jpg" alt="LIC Residential Tower" loading="lazy">
+                            <div class="portfolio-overlay">
+                                <span class="view-project">View Project →</span>
+                            </div>
+                        </div>
+                        <div class="portfolio-content">
+                            <div class="property-type">RESIDENTIAL</div>
+                            <h3 class="property-name">LIC Residential Tower</h3>
+                            <p class="property-location">27-17 42nd Road, Long Island City</p>
+                            <div class="property-details">
+                                <span class="detail-item">184 Units</span>
+                                <span class="detail-separator">•</span>
+                                <span class="detail-item">25 Stories</span>
+                                <span class="detail-separator">•</span>
+                                <span class="detail-item">2018</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="portfolio-card" data-category="mixed-use">
+                    <a href="#" class="portfolio-link">
+                        <div class="portfolio-image-container">
+                            <img src="https://img1.wsimg.com/isteam/ip/be1a9a04-7abb-4d85-84ab-58d85f335942/ddb0ef24-996d-4c2f-baed-8850d210cfb2.jpg" alt="Elmhurst Mixed-Use" loading="lazy">
+                            <div class="portfolio-overlay">
+                                <span class="view-project">View Project →</span>
+                            </div>
+                        </div>
+                        <div class="portfolio-content">
+                            <div class="property-type">MIXED-USE</div>
+                            <h3 class="property-name">Elmhurst Condominium Complex</h3>
+                            <p class="property-location">45-16 83rd Street, Elmhurst</p>
+                            <div class="property-details">
+                                <span class="detail-item">134 Units</span>
+                                <span class="detail-separator">•</span>
+                                <span class="detail-item">Ground Retail</span>
+                                <span class="detail-separator">•</span>
+                                <span class="detail-item">2019</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="portfolio-card" data-category="commercial">
+                    <a href="#" class="portfolio-link">
+                        <div class="portfolio-image-container">
+                            <img src="https://img1.wsimg.com/isteam/ip/be1a9a04-7abb-4d85-84ab-58d85f335942/e2efe1d6-fc91-4632-91f0-e06e6a34113d.jpg" alt="Mt. Sinai Medical Office" loading="lazy">
+                            <div class="portfolio-overlay">
+                                <span class="view-project">View Project →</span>
+                            </div>
+                        </div>
+                        <div class="portfolio-content">
+                            <div class="property-type">COMMERCIAL</div>
+                            <h3 class="property-name">Mt. Sinai Medical Office</h3>
+                            <p class="property-location">30-14 Crescent Street, Long Island City</p>
+                            <div class="property-details">
+                                <span class="detail-item">82,000 sq ft</span>
+                                <span class="detail-separator">•</span>
+                                <span class="detail-item">Medical Complex</span>
+                                <span class="detail-separator">•</span>
+                                <span class="detail-item">2019</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="portfolio-card" data-category="residential">
+                    <a href="#" class="portfolio-link">
+                        <div class="portfolio-image-container">
+                            <img src="https://img1.wsimg.com/isteam/ip/be1a9a04-7abb-4d85-84ab-58d85f335942/ab6abad0-0023-4a77-af7d-1df84c0a6e93.png" alt="Woodside Condominiums" loading="lazy">
+                            <div class="portfolio-overlay">
+                                <span class="view-project">View Project →</span>
+                            </div>
+                        </div>
+                        <div class="portfolio-content">
+                            <div class="property-type">RESIDENTIAL</div>
+                            <h3 class="property-name">Woodside Condominiums</h3>
+                            <p class="property-location">46-02 70th Street, Woodside</p>
+                            <div class="property-details">
+                                <span class="detail-item">74 Units</span>
+                                <span class="detail-separator">•</span>
+                                <span class="detail-item">Ground Retail</span>
+                                <span class="detail-separator">•</span>
+                                <span class="detail-item">2018</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- CTA Section -->
+    <section class="portfolio-cta">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Ready to Create Your Legacy Project?</h2>
+                <p>Join the distinguished roster of clients who have trusted us with their most important developments across New York City.</p>
+                <div class="cta-buttons">
+                    <a href="contact.html" class="btn-primary">Start Your Project</a>
+                    <a href="services.html" class="btn-secondary">Our Capabilities</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>INSIGNIA GROUP</h4>
+                    <p>Building Excellence Since 2005</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="services.html">Real Estate Development</a></li>
+                        <li><a href="services.html">Architecture & Design</a></li>
+                        <li><a href="services.html">Material Supply</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <p>Phone: (718) 366-6789</p>
+                    <p>Email: info@insigniagroupllc.com</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Insignia Group. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
