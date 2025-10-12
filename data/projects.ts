@@ -33,7 +33,7 @@ export const projects: Project[] = [
     completionDate: 'January 2026',
     heroImage: '/projects/nyu-langone.jpg',
     description: 'Self-developed and owned medical facility designed to serve the Brooklyn community with state-of-the-art healthcare infrastructure.',
-    insigniaAdvantage: 'As both developer and general contractor, we maintained complete quality control from foundation to finish, ensuring NYU Langone\'s exacting standards were met at every phase.',
+    insigniaAdvantage: 'As both developer and general contractor, we maintained complete quality control from foundation to finish, ensuring NYU Langone&apos;s exacting standards were met at every phase.',
     keyFeatures: [
       'Modern medical office building',
       'State-of-the-art healthcare infrastructure',
@@ -51,7 +51,7 @@ export const projects: Project[] = [
     location: '23 Ocean Parkway, Brooklyn, NY',
     completionDate: 'February 2026',
     heroImage: '/projects/ocean-parkway.jpg',
-    description: '131 luxury apartments in Brooklyn\'s desirable Ocean Parkway corridor.',
+    description: '131 luxury apartments in Brooklyn&apos;s desirable Ocean Parkway corridor.',
     insigniaAdvantage: 'Vertical integration enabled precise coordination between design, construction, and finishing trades, delivering luxury finishes on an accelerated timeline.',
     keyFeatures: [
       '131 luxury apartments',
@@ -114,7 +114,7 @@ export const projects: Project[] = [
     location: '156-08 Rockaway Blvd, Queens, NY',
     completionDate: 'September 2020',
     heroImage: '/projects/fairfield-rockaway.jpg',
-    description: '110-room hotel renovation for Marriott\'s Fairfield Inn & Suites brand.',
+    description: '110-room hotel renovation for Marriott&apos;s Fairfield Inn & Suites brand.',
     insigniaAdvantage: 'Renovation completed with minimal disruption to hotel operations through precise scheduling and phased construction methodology.',
     keyFeatures: [
       '110 guest rooms',
@@ -191,7 +191,7 @@ export const projects: Project[] = [
     location: '741 61st Street, Brooklyn, NY',
     completionDate: 'November 2017',
     heroImage: '/projects/insignia-hotel.jpg',
-    description: 'Self-developed and owned 87-key boutique hotel under Choice Hotels\' Ascend Collection brand, featuring 21 medical office units and 138 parking spaces.',
+    description: 'Self-developed and owned 87-key boutique hotel under Choice Hotels&apos; Ascend Collection brand, featuring 21 medical office units and 138 parking spaces.',
     insigniaAdvantage: 'Complete vertical integration from land acquisition through ongoing asset management has maximized returns and maintained exceptional property standards.',
     keyFeatures: [
       '87 hotel keys',
@@ -232,7 +232,7 @@ export const projects: Project[] = [
     location: '636 86th Street, Brooklyn, NY',
     completionDate: 'September 2023',
     heroImage: '/projects/avid-hotel.jpg',
-    description: 'Self-developed and owned 76-key hotel under IHG\'s AVID brand.',
+    description: 'Self-developed and owned 76-key hotel under IHG&apos;s AVID brand.',
     insigniaAdvantage: 'As both developer and builder, we optimized construction costs while meeting IHG brand standards, maximizing investment returns.',
     keyFeatures: [
       '76 hotel keys',
@@ -331,7 +331,7 @@ export const projects: Project[] = [
     location: '324 W 44th Street, New York, NY',
     completionDate: 'May 2019',
     heroImage: '/projects/towneplace.jpg',
-    description: 'TownePlace Suites by Marriott in Manhattan\'s Theater District.',
+    description: 'TownePlace Suites by Marriott in Manhattan&apos;s Theater District.',
     keyFeatures: [
       'TownePlace Suites by Marriott',
       'Theater District location',
