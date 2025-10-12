@@ -549,6 +549,302 @@ If yes to all, then ask.
 
 ---
 
+## 🔥 DEPLOYMENT TROUBLESHOOTING - REAL ISSUES
+
+### Issue 1: Vercel Build Failing - ESLint Errors
+
+**Problem:**
+Build failed on Vercel with `react/no-unescaped-entities` errors - apostrophes in text content blocking deployment.
+
+**Initial Wrong Approach:**
+Manually replacing all apostrophes with `&apos;` in every file - tedious and error-prone.
+
+**Correct Solution:**
+Create `.eslintrc.json` to disable problematic rules:
+
+```json
+{
+  "extends": "next/core-web-vitals",
+  "rules": {
+    "react/no-unescaped-entities": "off",
+    "@next/next/no-img-element": "warn"
+  }
+}
+```
+
+**Lesson:** Don't fight ESLint on text content - disable the rule and move on.
+
+---
+
+### Issue 2: Vercel 404 Despite Successful Build
+
+**Problem:**
+- Build completed successfully on Vercel
+- All routes generated correctly
+- Site returned 404 error when accessed
+- Local production build worked fine
+
+**Root Cause:**
+Vercel wasn't detecting the Next.js framework or build configuration correctly.
+
+**Solution:**
+Create explicit `vercel.json` configuration:
+
+```json
+{
+  "buildCommand": "npm run build",
+  "outputDirectory": ".next",
+  "framework": "nextjs",
+  "installCommand": "npm install"
+}
+```
+
+**Why This Works:**
+- Explicitly tells Vercel it's a Next.js project
+- Specifies exact build command and output directory
+- Ensures proper framework preset is used
+- Critical for Next.js 15 App Router projects
+
+**Lesson:** Don't assume Vercel auto-detects everything. Explicit configuration prevents deployment issues.
+
+---
+
+### Issue 3: Turbopack in Production Build
+
+**Problem:**
+`package.json` had `--turbopack` flag in build script:
+```json
+"build": "next build --turbopack"
+```
+
+**Why This Failed:**
+- Turbopack is experimental in Next.js 15
+- Not compatible with Vercel production deployments
+- Works fine in dev mode
+
+**Solution:**
+```json
+{
+  "scripts": {
+    "dev": "next dev --turbopack",     // Keep for dev
+    "build": "next build",              // Remove for production
+    "start": "next start"
+  }
+}
+```
+
+**Lesson:** Experimental features are for development only. Production builds must use stable tooling.
+
+---
+
+### Issue 4: Real Project Data Integration
+
+**Challenge:**
+Migrate from placeholder data to real project information from PDF resume.
+
+**Process:**
+1. Extract 19 projects from PDF with addresses, dates, square footage
+2. Create typed data structure (`data/projects.ts`)
+3. Organize 18 project images in `/public/projects/` with consistent naming
+4. Update ProjectGrid component to use real data
+5. Ensure all images tracked in git
+
+**File Naming Convention Used:**
+```
+forte-prep.jpg
+ocean-parkway.jpg
+43-08-52nd.jpg
+lic-tower.jpg
+nyu-langone.jpg
+```
+
+**Data Structure:**
+```typescript
+interface Project {
+  id: string;
+  title: string;
+  location: string;
+  description: string;
+  sector: 'residential' | 'commercial' | 'mixed-use' | 'industrial';
+  heroImage: string;
+  squareFootage?: number;
+  numberOfUnits?: number;
+  completionDate?: string;
+  status: 'completed' | 'in-progress';
+  insigniaAdvantage?: string;
+}
+```
+
+**Lesson:** Organize real data early. Placeholder data creates false confidence.
+
+---
+
+### Deployment Workflow That Actually Works
+
+```bash
+# 1. Stage all changes
+git add -A
+
+# 2. Check what's being committed
+git status
+
+# 3. Commit with descriptive message
+git commit -m "Fix: Add Vercel configuration to resolve 404 deployment error"
+
+# 4. Push to trigger Vercel deployment
+git push origin master
+
+# 5. Monitor Vercel deployment in dashboard
+# Watch for build logs and deployment URL
+```
+
+**Important Notes:**
+- Every push to master triggers Vercel deployment
+- Build logs show real errors (not just warnings)
+- Test locally with `npm run build` before pushing
+- Vercel deployment takes 2-3 minutes
+
+---
+
+### Vercel-Specific Configuration Files
+
+**Files That Matter:**
+
+1. **`vercel.json`** - Deployment configuration
+2. **`.eslintrc.json`** - Linting rules for build
+3. **`next.config.ts`** - Next.js framework config
+4. **`package.json`** - Build scripts and dependencies
+
+**Critical Build Script Requirements:**
+```json
+{
+  "scripts": {
+    "build": "next build",  // NO experimental flags
+    "start": "next start",  // Must exist for Vercel
+    "lint": "eslint"        // Runs during build
+  }
+}
+```
+
+---
+
+### Common Vercel 404 Causes & Solutions
+
+| Cause | Solution |
+|-------|----------|
+| Missing `vercel.json` | Create explicit configuration file |
+| Experimental build flags | Remove from production build script |
+| Wrong output directory | Verify `.next` directory in vercel.json |
+| Missing routes | Check `.next/routes-manifest.json` |
+| Framework not detected | Specify `"framework": "nextjs"` |
+
+---
+
+### Testing Production Build Locally
+
+**Before pushing to Vercel:**
+
+```bash
+# 1. Build for production
+npm run build
+
+# 2. Check build output
+# Look for: "Creating an optimized production build... ✓"
+# Check: All routes listed under "Route (app)"
+
+# 3. Verify .next directory
+ls -la .next/
+# Should see: app-build-manifest.json, BUILD_ID, routes-manifest.json
+
+# 4. Start production server locally
+npm start
+
+# 5. Test at http://localhost:3000
+# Verify all pages load without 404s
+```
+
+**If local production build works but Vercel fails:**
+- Check vercel.json exists
+- Verify build command matches local
+- Review Vercel build logs for errors
+- Ensure all files committed to git
+
+---
+
+### Git Workflow for Vercel Deployments
+
+**Complete Workflow:**
+
+```bash
+# Daily development
+npm run dev  # Uses turbopack for fast dev
+
+# Before committing
+npm run build  # Test production build locally
+npm run lint   # Check for errors
+
+# Commit and deploy
+git add -A
+git commit -m "Descriptive message about changes"
+git push origin master
+
+# Vercel auto-deploys from master branch
+# Monitor at: dashboard.vercel.com
+```
+
+**Branch Strategy:**
+- `master` → Production (auto-deploys to Vercel)
+- Feature branches → Preview deployments (if configured)
+
+---
+
+### Critical Files Checklist for Deployment
+
+Before first Vercel deployment, verify these files exist:
+
+- [ ] `vercel.json` - Deployment configuration
+- [ ] `.eslintrc.json` - Linting rules
+- [ ] `next.config.ts` - Next.js config
+- [ ] `app/layout.tsx` - Root layout with metadata
+- [ ] `app/page.tsx` - Homepage (IS the index file)
+- [ ] `.gitignore` - Excludes node_modules, .next, .env
+- [ ] All images in `/public/` committed to git
+
+**Common Git Mistakes:**
+- Forgetting to commit images in `/public/`
+- Adding `.env` files (security risk)
+- Committing `.next` build directory (unnecessary)
+
+---
+
+### Next.js 15 App Router Specifics
+
+**Important: `app/page.tsx` IS the index file**
+
+There is NO `index.html` or `index.tsx` in Next.js 15 App Router.
+
+**Route Structure:**
+```
+app/
+├── page.tsx              → / (homepage)
+├── layout.tsx            → Root layout
+├── approach/page.tsx     → /approach
+├── portfolio/page.tsx    → /portfolio
+├── contact/page.tsx      → /contact
+└── api/contact/route.ts  → /api/contact
+```
+
+**Each `page.tsx` exports default component:**
+```tsx
+export default function Home() {
+  return <div>Content</div>;
+}
+```
+
+**Lesson:** Don't look for `index.html`. Next.js App Router uses convention-based routing.
+
+---
+
 ## 📝 PROJECT HANDOFF
 
 ### Deliver to Client:
@@ -620,6 +916,7 @@ Track these for every project:
 
 ---
 
-*Last Updated: January 2025*
-*Based on: Insignia Group website build*
+*Last Updated: October 2025*
+*Based on: Insignia Group website build & deployment*
+*Includes: Real-world Vercel deployment troubleshooting*
 *For: Future web development projects*
