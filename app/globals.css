@@ -1,0 +1,138 @@
+@import "tailwindcss";
+
+/* Oxford-inspired Design System for Insignia Group */
+
+@theme {
+  /* Custom Colors */
+  --color-charcoal: #1a1a1a;
+  --color-gold: #d4a574;
+  --color-warm-gray: #f5f5f5;
+  --color-medium-gray: #666666;
+
+  /* Background/Foreground */
+  --color-background: #ffffff;
+  --color-foreground: #1a1a1a;
+
+  /* Font Family */
+  --font-sans: var(--font-inter), system-ui, -apple-system, sans-serif;
+
+  /* Spacing Scale - Based on 4px base unit */
+  --space-2: 0.5rem;   /* 8px */
+  --space-3: 0.75rem;  /* 12px */
+  --space-4: 1rem;     /* 16px */
+  --space-6: 1.5rem;   /* 24px */
+  --space-8: 2rem;     /* 32px */
+  --space-10: 2.5rem;  /* 40px */
+  --space-12: 3rem;    /* 48px */
+  --space-16: 4rem;    /* 64px */
+  --space-20: 5rem;    /* 80px */
+  --space-24: 6rem;    /* 96px */
+  --space-32: 8rem;    /* 128px */
+  --space-40: 10rem;   /* 160px */
+  --space-48: 12rem;   /* 192px */
+
+  /* Section Spacing - Semantic tokens */
+  --section-padding-mobile: var(--space-20);    /* 80px */
+  --section-padding-tablet: var(--space-32);    /* 128px */
+  --section-padding-desktop: var(--space-40);   /* 160px */
+  --section-padding-wide: var(--space-48);      /* 192px */
+
+  /* Animation Timing */
+  --duration-fast: 300ms;
+  --duration-normal: 500ms;
+  --duration-slow: 800ms;
+  --duration-slower: 1200ms;
+
+  --ease-standard: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-accelerate: cubic-bezier(0.4, 0, 1, 1);
+  --ease-decelerate: cubic-bezier(0, 0, 0.2, 1);
+
+  /* Stagger Timing */
+  --stagger-sm: 100ms;
+  --stagger-md: 150ms;
+  --stagger-lg: 200ms;
+}
+
+/* Global Styles */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background: var(--color-background);
+  color: var(--color-foreground);
+  line-height: 1.6;
+}
+
+/* Typography Scale - Systematic Hierarchy */
+/*
+  H1: Page hero (largest, most important)
+  H2: Major section headings
+  H3: Subsection headings / Card titles
+  H4: Minor headings
+  Body: text-base (16px) to text-xl (20px)
+*/
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 300;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+/* H1 - Hero Level (Mobile: 36px → Desktop: 80px) */
+h1 {
+  font-size: clamp(2.25rem, 6vw, 5rem);
+  font-weight: 200;
+}
+
+/* H2 - Section Heading (Mobile: 28px → Desktop: 56px) */
+h2 {
+  font-size: clamp(1.75rem, 5vw, 3.5rem);
+  font-weight: 300;
+}
+
+/* H3 - Subsection/Card Heading (Mobile: 24px → Desktop: 40px) */
+h3 {
+  font-size: clamp(1.5rem, 4vw, 2.5rem);
+  font-weight: 600;
+}
+
+/* H4 - Minor Heading (Mobile: 18px → Desktop: 24px) */
+h4 {
+  font-size: clamp(1.125rem, 2.5vw, 1.5rem);
+  font-weight: 600;
+}
+
+/* Smooth Transitions */
+a, button {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Selection Color */
+::selection {
+  background: var(--color-gold);
+  color: #ffffff;
+}
+
+/* Remove default button styles */
+button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+/* Image optimization */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
