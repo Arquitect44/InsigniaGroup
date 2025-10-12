@@ -30,7 +30,7 @@ export default function Hero() {
           </motion.p>
 
           <h1 className="text-white mb-8 leading-tight">
-            Let's discuss <span className="font-bold">your project.</span>
+            Let&apos;s discuss <span className="font-bold">your project.</span>
           </h1>
 
           <motion.p
@@ -39,7 +39,7 @@ export default function Hero() {
             animate={{ opacity: 1 }}
             transition={{ delay: 0.4, duration: 0.8 }}
           >
-            Whether you're exploring development partnerships, joint ventures, or property management services, we welcome the opportunity to connect.
+            Whether you&apos;re exploring development partnerships, joint ventures, or property management services, we welcome the opportunity to connect.
           </motion.p>
         </motion.div>
       </div>

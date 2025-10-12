@@ -47,7 +47,7 @@ export default function WhyChoose() {
           viewport={{ once: true }}
           transition={{ delay: 0.2, duration: 0.6 }}
         >
-          When you work with Insignia Group, you're partnering with a fully integrated development firm that controls every aspect of the real estate lifecycle.
+          When you work with Insignia Group, you&apos;re partnering with a fully integrated development firm that controls every aspect of the real estate lifecycle.
         </motion.p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-16 xl:gap-20">

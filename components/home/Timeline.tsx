@@ -52,7 +52,7 @@ export default function Timeline() {
           viewport={{ once: true }}
           transition={{ delay: 0.2, duration: 0.6 }}
         >
-          From our founding to today, we've built a legacy of innovation, quality, and lasting impact across New York City's real estate landscape.
+          From our founding to today, we&apos;ve built a legacy of innovation, quality, and lasting impact across New York City&apos;s real estate landscape.
         </motion.p>
 
         <div className="relative">

@@ -77,7 +77,7 @@ export default function StatsSection() {
           viewport={{ once: true }}
           transition={{ delay: 0.2, duration: 0.6 }}
         >
-          We've applied our deep expertise of investing in, managing and operating real estate to drive lasting economic and social impact. By prioritizing people, partnerships and places, we generate meaningful returns for our stakeholders and enhance value for our capital partners.
+          We&apos;ve applied our deep expertise of investing in, managing and operating real estate to drive lasting economic and social impact. By prioritizing people, partnerships and places, we generate meaningful returns for our stakeholders and enhance value for our capital partners.
         </motion.p>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 md:gap-20 lg:gap-12 xl:gap-16">
           {stats.map((stat, index) => (
