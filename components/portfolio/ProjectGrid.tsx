@@ -3,128 +3,22 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Section from '../ui/Section';
-
-const projects = [
-  {
-    id: 1,
-    title: 'The Residences at LIC',
-    location: 'Long Island City, Queens',
-    type: 'Residential',
-    category: 'residential',
-    size: '450,000 SF',
-    units: '320 Units',
-    year: '2023',
-    description: 'Luxury waterfront residences with panoramic Manhattan skyline views.',
-    image: '/projects/lic-tower.webp',
-    featured: true,
-  },
-  {
-    id: 2,
-    title: 'Hudson Yards Medical',
-    location: 'Manhattan',
-    type: 'Healthcare',
-    category: 'healthcare',
-    size: '280,000 SF',
-    units: 'NYU Partnership',
-    year: '2022',
-    description: 'State-of-the-art medical facility adjacent to Hudson Yards development.',
-    image: '/projects/medical-center.webp',
-    featured: true,
-  },
-  {
-    id: 3,
-    title: 'Brooklyn Heights Plaza',
-    location: 'Brooklyn Heights',
-    type: 'Mixed-Use',
-    category: 'mixed-use',
-    size: '520,000 SF',
-    units: '180 Units + Retail',
-    year: '2021',
-    description: 'Mixed-use development combining residential, retail, and community spaces.',
-    image: '/projects/brooklyn-plaza.webp',
-    featured: true,
-  },
-  {
-    id: 4,
-    title: 'Park Avenue Office Tower',
-    location: 'Midtown Manhattan',
-    type: 'Commercial',
-    category: 'commercial',
-    size: '720,000 SF',
-    units: 'Class A Office',
-    year: '2020',
-    description: 'Premium office space with LEED Gold certification and modern amenities.',
-    image: '/projects/park-tower.webp',
-    featured: false,
-  },
-  {
-    id: 5,
-    title: 'Williamsburg Lofts',
-    location: 'Williamsburg, Brooklyn',
-    type: 'Residential',
-    category: 'residential',
-    size: '180,000 SF',
-    units: '140 Units',
-    year: '2019',
-    description: 'Industrial conversion featuring exposed brick and modern luxury finishes.',
-    image: '/projects/williamsburg.webp',
-    featured: false,
-  },
-  {
-    id: 6,
-    title: 'Chelsea Market District',
-    location: 'Chelsea, Manhattan',
-    type: 'Mixed-Use',
-    category: 'mixed-use',
-    size: '650,000 SF',
-    units: '220 Units + Retail',
-    year: '2019',
-    description: 'Contemporary mixed-use development in the heart of Chelsea.',
-    image: '/projects/chelsea.webp',
-    featured: false,
-  },
-  {
-    id: 7,
-    title: 'Upper East Side Medical',
-    location: 'Upper East Side',
-    type: 'Healthcare',
-    category: 'healthcare',
-    size: '340,000 SF',
-    units: 'Medical Complex',
-    year: '2018',
-    description: 'Comprehensive healthcare facility with outpatient and specialty services.',
-    image: '/projects/ues-medical.webp',
-    featured: false,
-  },
-  {
-    id: 8,
-    title: 'Tribeca Corporate Center',
-    location: 'Tribeca, Manhattan',
-    type: 'Commercial',
-    category: 'commercial',
-    size: '890,000 SF',
-    units: 'Class A Office',
-    year: '2017',
-    description: 'Iconic office tower serving Fortune 500 companies and creative firms.',
-    image: '/projects/tribeca.webp',
-    featured: false,
-  },
-];
+import { projects as allProjects } from '@/data/projects';
 
 const categories = [
   { id: 'all', label: 'All Projects' },
   { id: 'residential', label: 'Residential' },
   { id: 'commercial', label: 'Commercial' },
   { id: 'mixed-use', label: 'Mixed-Use' },
-  { id: 'healthcare', label: 'Healthcare' },
+  { id: 'industrial', label: 'Industrial' },
 ];
 
 export default function ProjectGrid() {
   const [activeCategory, setActiveCategory] = useState('all');
 
   const filteredProjects = activeCategory === 'all'
-    ? projects
-    : projects.filter(project => project.category === activeCategory);
+    ? allProjects
+    : allProjects.filter(project => project.sector === activeCategory);
 
   return (
     <Section background="warm-gray" containerSize="full">
@@ -198,18 +92,18 @@ export default function ProjectGrid() {
                 {/* Image */}
                 <div className="relative aspect-[4/3] overflow-hidden bg-gray-200">
                   <img
-                    src={project.image}
+                    src={project.heroImage}
                     alt={project.title}
                     loading="lazy"
                     className="absolute inset-0 min-w-full min-h-full w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700"
                   />
-                  {/* Type Badge */}
+                  {/* Sector Badge */}
                   <div className="absolute top-4 left-4 bg-[#d4a574] text-white px-4 py-1.5 text-xs font-semibold uppercase tracking-wider">
-                    {project.type}
+                    {project.sector}
                   </div>
-                  {project.featured && (
+                  {project.status === 'in-progress' && (
                     <div className="absolute top-4 right-4 bg-white text-[#1a1a1a] px-3 py-1 text-xs font-bold uppercase tracking-wider">
-                      Featured
+                      Under Construction
                     </div>
                   )}
                 </div>
@@ -230,15 +124,21 @@ export default function ProjectGrid() {
                   <div className="grid grid-cols-3 gap-4 pt-6 border-t border-gray-200">
                     <div>
                       <p className="text-xs text-gray-500 uppercase tracking-wide mb-1">Size</p>
-                      <p className="text-sm font-semibold text-[#1a1a1a]">{project.size}</p>
+                      <p className="text-sm font-semibold text-[#1a1a1a]">
+                        {project.squareFootage ? `${project.squareFootage.toLocaleString()} SF` : 'N/A'}
+                      </p>
                     </div>
                     <div>
                       <p className="text-xs text-gray-500 uppercase tracking-wide mb-1">Units</p>
-                      <p className="text-sm font-semibold text-[#1a1a1a]">{project.units}</p>
+                      <p className="text-sm font-semibold text-[#1a1a1a]">
+                        {project.numberOfUnits ? `${project.numberOfUnits}` : 'N/A'}
+                      </p>
                     </div>
                     <div>
-                      <p className="text-xs text-gray-500 uppercase tracking-wide mb-1">Year</p>
-                      <p className="text-sm font-semibold text-[#1a1a1a]">{project.year}</p>
+                      <p className="text-xs text-gray-500 uppercase tracking-wide mb-1">Completion</p>
+                      <p className="text-sm font-semibold text-[#1a1a1a]">
+                        {project.completionDate ? project.completionDate.split(' ')[1] || project.completionDate.split(' ')[0] : 'N/A'}
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -247,7 +147,7 @@ export default function ProjectGrid() {
           </motion.div>
         </AnimatePresence>
 
-        {/* Note about additional projects */}
+        {/* Note about total projects */}
         <motion.div
           className="mt-10 text-center"
           initial={{ opacity: 0 }}
@@ -256,9 +156,9 @@ export default function ProjectGrid() {
           transition={{ duration: 0.6 }}
         >
           <p className="text-gray-600 text-lg">
-            Showcasing 8 of our 43 landmark buildings.
+            Showcasing 19 of our 43 landmark buildings.
             <br />
-            <span className="text-sm mt-2 block">Additional projects available upon request.</span>
+            <span className="text-sm mt-2 block">Each project reflecting our commitment to excellence and vertical integration.</span>
           </p>
         </motion.div>
       </div>

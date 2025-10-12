@@ -3,33 +3,22 @@
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 import Section from '../ui/Section';
+import { projects } from '@/data/projects';
 
-const featuredProjects = [
-  {
-    title: 'Long Island City Residential Tower',
-    location: '27-17 42nd Road, Long Island City',
-    type: 'Luxury Residential',
-    details: '182 Condo Units',
-    image: '/projects/lic-tower.webp',
-    slug: 'lic-residential-tower',
-  },
-  {
-    title: 'Insignia Hotel Brooklyn',
-    location: '741 61st Street, Brooklyn',
-    type: 'Mixed-Use Development',
-    details: '87-Room Hotel + 21 Medical Office Units',
-    image: '/projects/insignia-hotel.webp',
-    slug: 'insignia-hotel-brooklyn',
-  },
-  {
-    title: 'NYU Langone Health Center',
-    location: '6025 6th Avenue, Brooklyn',
-    type: 'Healthcare Facility',
-    details: 'Self-Developed & Owned',
-    image: '/projects/nyu-langone.webp',
-    slug: 'nyu-langone-health-center',
-  },
-];
+// Featured projects: NYU Langone (in-progress), Insignia Hotel (self-developed flagship), LIC Tower (largest residential)
+const featuredProjectSlugs = ['nyu-langone-brooklyn', 'insignia-hotel-brooklyn', 'lic-tower'];
+const featuredProjects = projects
+  .filter(p => featuredProjectSlugs.includes(p.slug))
+  .map(p => ({
+    title: p.title,
+    location: p.location,
+    type: p.sector.charAt(0).toUpperCase() + p.sector.slice(1),
+    details: p.numberOfUnits
+      ? `${p.numberOfUnits} ${p.sector === 'commercial' ? 'Keys' : 'Units'}`
+      : p.services.includes('full-integration') ? 'Self-Developed & Owned' : 'Design-Build',
+    image: p.heroImage,
+    slug: p.slug,
+  }));
 
 export default function FeaturedProjects() {
   return (
