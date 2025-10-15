@@ -67,7 +67,6 @@ const capabilities = [
       'Financial reporting and analysis',
       'Asset repositioning strategies',
     ],
-    ],
   },
 ];
 
