@@ -12,7 +12,7 @@ const stats = [
     decimals: 0,
   },
   {
-    number: 2.5,
+    number: 3.3,
     label: 'Square Feet Developed',
     suffix: 'M',
     decimals: 1,
@@ -22,7 +22,7 @@ const stats = [
     number: 1.1,
     label: 'In Total Valuation',
     suffix: 'B',
-    decimals: 0,
+    decimals: 1,
   },
   {
     number: 20,
