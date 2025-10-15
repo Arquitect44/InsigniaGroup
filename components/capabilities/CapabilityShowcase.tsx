@@ -20,7 +20,6 @@ const capabilities = [
     metrics: [
       { label: 'Projects Underwritten', value: '200+' },
       { label: 'Sites Acquired', value: '43' },
-      { label: 'Success Rate', value: '95%' },
     ],
   },
   {
@@ -35,11 +34,6 @@ const capabilities = [
       'Zoning analysis and entitlements',
       'Building systems engineering',
       'Value engineering and cost optimization',
-    ],
-    metrics: [
-      { label: 'Buildings Designed', value: '43' },
-      { label: 'LEED Certified', value: '12' },
-      { label: 'Design Awards', value: '8' },
     ],
   },
   {
@@ -57,8 +51,7 @@ const capabilities = [
     ],
     metrics: [
       { label: 'Buildings Built', value: '43' },
-      { label: 'SF Delivered', value: '12M' },
-      { label: 'On-Time Projects', value: '92%' },
+      { label: 'SF Delivered', value: '3.3M' },
     ],
   },
   {
@@ -74,10 +67,6 @@ const capabilities = [
       'Financial reporting and analysis',
       'Asset repositioning strategies',
     ],
-    metrics: [
-      { label: 'Properties Managed', value: '43' },
-      { label: 'Tenant Retention', value: '88%' },
-      { label: 'Occupancy Rate', value: '96%' },
     ],
   },
 ];
