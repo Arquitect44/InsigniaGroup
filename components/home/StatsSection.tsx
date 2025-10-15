@@ -19,9 +19,9 @@ const stats = [
   },
   {
     prefix: '$',
-    number: 350,
-    label: 'In net assets',
-    suffix: 'M+',
+    number: 1.1,
+    label: 'In Total Valuation',
+    suffix: 'B',
     decimals: 0,
   },
   {
