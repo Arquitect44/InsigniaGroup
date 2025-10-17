@@ -18,9 +18,9 @@ const expertise = [
   {
     category: 'Geographic Focus',
     items: [
-      'Manhattan (all boroughs)',
-      'Brooklyn (prime neighborhoods)',
-      'Queens (Long Island City, Astoria)',
+      'Manhattan',
+      'Brooklyn',
+      'Queens',
       'Strategic suburban markets',
       'Transit-oriented developments',
       'Waterfront locations',

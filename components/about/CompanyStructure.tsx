@@ -28,7 +28,7 @@ const companies = {
       ],
     },
     {
-      name: 'Plumber Supply',
+      name: 'Super Plumbing & Building Supply',
       tagline: 'MEP Systems & Supply Chain',
       description: 'Integrated supply chain control delivering cost optimization and procurement efficiency.',
       services: [
