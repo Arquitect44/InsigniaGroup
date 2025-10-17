@@ -20,17 +20,17 @@ export default function Navigation() {
     <nav className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md shadow-sm relative">
       {/* Horizontal gold line - 4px up from bottom */}
       <div className="absolute left-0 right-0 bottom-3 h-0.5 bg-[#d4a574]" />
-      <div className="max-w-[2000px] mx-auto pr-4 md:pr-6 lg:pr-8">
+      <div className="max-w-[2000px] mx-auto px-4 md:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20 lg:h-24">
           {/* Logo */}
-          <Link href="/" className="flex items-center pl-4 md:pl-6 lg:pl-8 border-l-2 border-[#d4a574]">
+          <Link href="/" className="flex items-center pl-4 md:pl-6 lg:pl-8 border-l-2 border-[#d4a574] -ml-4 md:-ml-6 lg:-ml-8">
             <h1 className="text-2xl lg:text-3xl font-semibold tracking-tight text-[#1a1a1a]">
               INSIGNIA GROUP
             </h1>
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-8 lg:gap-12">
+          <div className="hidden md:flex items-center gap-4 md:gap-6 lg:gap-12">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
