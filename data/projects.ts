@@ -594,7 +594,7 @@ export const projects: Project[] = [
     completionDate: 'TBD',
     squareFootage: 71541,
     numberOfUnits: 211,
-    heroImage: '/projects/placeholder-hotel.jpg',
+    heroImage: '/projects/chelsea_inn.webp',
     description: '211-room, 13-story Holiday Inn Express in Chelsea/NoMad.',
     keyFeatures: [
       '211 guest rooms',
@@ -617,7 +617,7 @@ export const projects: Project[] = [
     completionDate: 'TBD',
     squareFootage: 97017,
     numberOfUnits: 325,
-    heroImage: '/projects/placeholder-hotel.jpg',
+    heroImage: '/projects/arlo_soho.webp',
     description: '325-room, 11-story boutique hotel in SoHo.',
     keyFeatures: [
       '325 guest rooms',
