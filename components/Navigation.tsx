@@ -30,12 +30,12 @@ export default function Navigation() {
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center gap-8 xl:gap-12 flex-shrink-0">
+          <div className="hidden min-[1500px]:flex items-center gap-8 xl:gap-12 flex-shrink-0">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
-                className="relative text-sm lg:text-base font-medium tracking-wide text-gray-600 hover:text-[#d4a574] transition-all duration-300 group"
+                className="relative text-base font-medium tracking-wide text-gray-600 hover:text-[#d4a574] transition-all duration-300 group"
               >
                 {link.label}
                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#d4a574] transition-all duration-300 group-hover:w-full"></span>
@@ -45,7 +45,7 @@ export default function Navigation() {
 
           {/* Mobile Menu Button */}
           <button
-            className="lg:hidden text-[#1a1a1a] p-2"
+            className="min-[1500px]:hidden text-[#1a1a1a] p-2"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             aria-label="Toggle menu"
           >
@@ -56,7 +56,7 @@ export default function Navigation() {
 
       {/* Mobile Menu */}
       {mobileMenuOpen && (
-        <div className="lg:hidden bg-white border-t border-gray-200">
+        <div className="min-[1500px]:hidden bg-white border-t border-gray-200">
           <div className="px-6 py-4 flex flex-col gap-4">
             {navLinks.map((link) => (
               <Link
