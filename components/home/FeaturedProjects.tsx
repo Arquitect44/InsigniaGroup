@@ -14,9 +14,11 @@ const featuredProjects = featuredProjectSlugs
     title: p.title,
     location: p.location,
     type: p.sector.charAt(0).toUpperCase() + p.sector.slice(1),
-    details: p.numberOfUnits
+    details: p.services.includes('full-integration')
+      ? 'Self-Developed & Owned'
+      : p.numberOfUnits
       ? `${p.numberOfUnits} ${p.sector === 'commercial' ? 'Keys' : 'Units'}`
-      : p.services.includes('full-integration') ? 'Self-Developed & Owned' : 'Design-Build',
+      : 'Design-Build',
     image: p.heroImage,
     slug: p.slug,
   }));
