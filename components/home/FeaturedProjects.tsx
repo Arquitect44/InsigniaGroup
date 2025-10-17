@@ -56,7 +56,7 @@ export default function FeaturedProjects() {
             viewport={{ once: true }}
             transition={{ delay: index * 0.15, duration: 0.6 }}
           >
-            <Link href={`/portfolio/${project.slug}`} className="group block cursor-pointer">
+            <Link href="/portfolio" className="group block cursor-pointer">
               <div className="relative aspect-[4/3] bg-gray-300 mb-6 lg:mb-8 overflow-hidden">
                 <img
                   src={project.image}
