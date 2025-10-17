@@ -62,7 +62,7 @@ export default function StatsSection() {
     <section className="bg-[#1a1a1a] py-10 md:py-16 lg:py-20">
       <div className="max-w-[2000px] mx-auto px-4 md:px-6 lg:px-8">
         <motion.h2
-          className="text-white mb-12 md:mb-16"
+          className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-light text-white mb-12 md:mb-16"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -117,7 +117,7 @@ export default function StatsSection() {
                 <Counter value={stat.number} decimals={stat.decimals} suffix={stat.suffix} prefix={stat.prefix} />
               </motion.div>
               <motion.div
-                className="text-gray-400 text-sm md:text-base lg:text-lg uppercase tracking-wider font-medium"
+                className="text-gray-400 text-sm md:text-base lg:text-lg uppercase tracking-wider font-medium whitespace-nowrap"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}

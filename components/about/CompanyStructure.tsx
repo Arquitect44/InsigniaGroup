@@ -46,7 +46,7 @@ export default function CompanyStructure() {
     <Section background="white" containerSize="xl">
       <div className="max-w-[2000px] mx-auto">
         <motion.h2
-          className="text-[#1a1a1a] mb-6 md:mb-8 text-center"
+          className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-light text-[#1a1a1a] mb-6 md:mb-8 text-center"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -107,11 +107,11 @@ export default function CompanyStructure() {
           {/* Subsidiaries Grid */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 relative">
             {/* Horizontal connecting line for desktop */}
-            <div className="hidden lg:block absolute top-0 left-1/2 -translate-x-1/2 -translate-y-16 w-[600px] h-0.5 bg-[#d4a574]" />
+            <div className="hidden lg:block absolute top-0 left-[12.5%] -translate-y-16 w-3/4 h-0.5 bg-[#d4a574]" />
 
             {/* Vertical lines connecting to each subsidiary */}
-            <div className="hidden lg:block absolute top-0 left-[25%] -translate-y-16 w-0.5 h-16 bg-[#d4a574]" />
-            <div className="hidden lg:block absolute top-0 left-[75%] -translate-y-16 w-0.5 h-16 bg-[#d4a574]" />
+            <div className="hidden lg:block absolute top-0 left-[12.5%] -translate-y-16 w-0.5 h-16 bg-[#d4a574]" />
+            <div className="hidden lg:block absolute top-0 right-[12.5%] -translate-y-16 w-0.5 h-16 bg-[#d4a574]" />
 
             {companies.subsidiaries.map((company, index) => (
               <motion.div
