@@ -62,12 +62,12 @@ export const projects: Project[] = [
   },
   {
     id: 'college-point',
-    title: 'College Point ',
+    title: '122-03 14th Avenue',
     slug: 'college-point-avenue-u',
     sector: 'mixed-use',
     status: 'in-progress',
     services: ['full-integration'],
-    location: 'College Point & Avenue U, Brooklyn, NY',
+    location: '122-03 14th Ave, Queens, NY',
     completionDate: 'TBD 2026',
     heroImage: '/projects/college-point.jpg',
     description: 'Large-scale mixed-use development featuring residential units and commercial spaces in prime Brooklyn locations.',
@@ -594,7 +594,7 @@ export const projects: Project[] = [
     completionDate: 'TBD',
     squareFootage: 71541,
     numberOfUnits: 211,
-    heroImage: '/projects/chelsea_inn.webp',
+    heroImage: '/projects/Chelsea_inn.webp',
     description: '211-room, 13-story Holiday Inn Express in Chelsea/NoMad.',
     keyFeatures: [
       '211 guest rooms',
