@@ -57,12 +57,12 @@ export default function Navigation() {
       {/* Mobile Menu */}
       {mobileMenuOpen && (
         <div className="min-[1500px]:hidden bg-white border-t border-gray-200">
-          <div className="px-6 py-4 flex flex-col gap-4">
+          <div className="px-6 py-4 flex flex-row flex-wrap justify-center gap-x-6 gap-y-3">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
-                className="block text-base font-medium text-[#1a1a1a] hover:text-[#d4a574] transition-colors"
+                className="text-base font-medium text-[#1a1a1a] hover:text-[#d4a574] transition-colors"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 {link.label}
