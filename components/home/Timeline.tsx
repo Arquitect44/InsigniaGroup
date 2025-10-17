@@ -11,17 +11,17 @@ const milestones = [
   },
   {
     year: '2008',
-    title: 'First Major Project',
-    description: 'Delivered first major development, setting the standard for quality and efficiency.',
+    title: 'First Major Development',
+    description: 'Delivered our first major development, setting the standard for quality and efficiency.',
   },
   {
     year: '2015',
-    title: 'First Hotel Project',
-    description: 'Entered hospitality development, expanding our vertically integrated capabilities.',
+    title: 'First Hotel Development',
+    description: 'Entered into the hospitality development sector, expanding our vertically integrated capabilities.',
   },
   {
     year: '2019',
-    title: 'Charter School Projects',
+    title: 'First Charter School Development',
     description: 'Began educational facility development, bringing expertise to the education sector.',
   },
   {
