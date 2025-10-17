@@ -30,7 +30,7 @@ export default function Navigation() {
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-2 md:gap-3 lg:gap-8 xl:gap-12 flex-shrink-0">
+          <div className="hidden lg:flex items-center gap-8 xl:gap-12 flex-shrink-0">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
@@ -45,7 +45,7 @@ export default function Navigation() {
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden text-[#1a1a1a] p-2"
+            className="lg:hidden text-[#1a1a1a] p-2"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             aria-label="Toggle menu"
           >
@@ -56,7 +56,7 @@ export default function Navigation() {
 
       {/* Mobile Menu */}
       {mobileMenuOpen && (
-        <div className="md:hidden bg-white border-t border-gray-200">
+        <div className="lg:hidden bg-white border-t border-gray-200">
           <div className="px-6 py-4 flex flex-col gap-4">
             {navLinks.map((link) => (
               <Link
