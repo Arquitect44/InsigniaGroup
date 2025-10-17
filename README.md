@@ -34,3 +34,12 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+## White‑Label Templates
+
+- Minimal starter: `C:\Users\marma\Documents\Projects\next-white-label` (barebones Next 14 + Tailwind)
+  - Scripted clone: `powershell -ExecutionPolicy Bypass -File C:\Users\marma\Documents\Projects\next-white-label\scripts\new-site.ps1 -Name "Acme Realty" -Domain "acme.example" -Title "Acme Realty" -Tagline "Building with purpose" -Color "#1f2937" -InitGit -Install`
+  - Manual: duplicate and replace tokens in `config/site.ts`.
+- Insignia‑style unbranded: `C:\Users\marma\Documents\Projects\insignia-white-label` (preserves layout and sections)
+  - Install and run: `cd C:\Users\marma\Documents\Projects\insignia-white-label && npm install && npm run dev`
+  - Update tokens in `config/site.ts`.

@@ -41,7 +41,7 @@ export default function Philosophy() {
               Quality isn&apos;t an accident. It&apos;s the result of intention, experience, and complete control over every decision.
             </p>
             <p className="text-lg md:text-xl text-gray-600 leading-relaxed">
-              For three generations, our family has built landmark properties across New York City. We&apos;ve learned that the only way to guarantee excellence is to own every stage of the process—from identifying the opportunity to managing the completed asset.
+              For three generations, our family has built iconic properties across New York City. We&apos;ve learned that the only way to guarantee excellence is to own every stage of the process—from identifying the opportunity to managing the completed asset.
             </p>
           </motion.div>
 

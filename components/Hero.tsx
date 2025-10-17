@@ -51,7 +51,7 @@ export default function Hero() {
             animate={{ opacity: 1 }}
             transition={{ delay: 0.3, duration: 0.8 }}
           >
-            From initial vision to final delivery, we control every stage of development ensuring uncompromising quality across 43 landmark buildings throughout New York City.
+            From initial vision to final delivery, we control every stage of development ensuring uncompromising quality across 43 iconic buildings throughout New York City.
           </motion.p>
 
           <motion.div

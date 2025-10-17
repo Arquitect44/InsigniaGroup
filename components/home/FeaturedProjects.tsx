@@ -5,10 +5,11 @@ import Link from 'next/link';
 import Section from '../ui/Section';
 import { projects } from '@/data/projects';
 
-// Featured projects: NYU Langone (in-progress), Insignia Hotel (self-developed flagship), LIC Tower (largest residential)
-const featuredProjectSlugs = ['nyu-langone-brooklyn', 'insignia-hotel-brooklyn', 'lic-tower'];
-const featuredProjects = projects
-  .filter(p => featuredProjectSlugs.includes(p.slug))
+// Featured projects: Avenue U, College Point, NYU Langone
+const featuredProjectSlugs = ['avenue-u', 'college-point-avenue-u', 'nyu-langone-brooklyn'];
+const featuredProjects = featuredProjectSlugs
+  .map(slug => projects.find(p => p.slug === slug))
+  .filter(p => p !== undefined)
   .map(p => ({
     title: p.title,
     location: p.location,
@@ -40,7 +41,7 @@ export default function FeaturedProjects() {
           viewport={{ once: true }}
           transition={{ delay: 0.2, duration: 0.6 }}
         >
-          Three generations of expertise delivering landmark developments across hotels, residential, healthcare, and commercial properties throughout New York City.
+          Three generations of expertise delivering iconic developments across hotels, residential, healthcare, and commercial properties throughout New York City.
         </motion.p>
       </div>
 

@@ -6,9 +6,9 @@ import Section from '../ui/Section';
 const offices = [
   {
     title: 'Headquarters',
-    address: '56-12 58th Street',
-    city: 'Maspeth, NY 11378',
-    phone: '(718) 366-6789',
+    address: '122-03 14th Ave',
+    city: 'College Point, NY 11356',
+    phone: '(718) 888-1881',
     email: 'info@insigniagroup.com',
   },
 ];
@@ -34,7 +34,7 @@ export default function ContactInfo() {
           viewport={{ once: true }}
           transition={{ delay: 0.2, duration: 0.6 }}
         >
-          Centrally located in Queens, serving our portfolio of landmark buildings across New York City.
+          Centrally located in Queens, serving our portfolio of iconic buildings across New York City.
         </motion.p>
 
         <div className="grid grid-cols-1 gap-8 lg:gap-12 max-w-2xl">

@@ -7,8 +7,8 @@ import Section from '../ui/Section';
 
 const stats = [
   { number: 43, label: 'Buildings Completed', suffix: '', decimals: 0 },
-  { number: 12, label: 'Million SF', suffix: 'M', decimals: 0 },
-  { number: 8, label: 'Major Projects', suffix: '+', decimals: 0 },
+  { number: 3.3, label: 'Million SF', suffix: 'M', decimals: 1 },
+  { number: 257, label: 'Projects under construction', suffix: '+', decimals: 0 },
   { number: 20, label: 'Years Experience', suffix: '', decimals: 0 },
 ];
 

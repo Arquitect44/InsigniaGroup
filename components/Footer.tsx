@@ -8,17 +8,14 @@ export default function Footer() {
     company: [
       { label: 'About Us', href: '/about' },
       { label: 'Our Approach', href: '/approach' },
-      { label: 'Careers', href: '/careers' },
-      { label: 'ESG Commitment', href: '/esg' },
     ],
     services: [
       { label: 'Portfolio', href: '/portfolio' },
       { label: 'Capabilities', href: '/capabilities' },
-      { label: 'Insights', href: '/insights' },
+ 
     ],
     contact: [
       { label: 'Contact Us', href: '/contact' },
-      { label: 'Investor Relations', href: '/investors' },
       { label: 'Leasing Inquiries', href: '/contact?type=leasing' },
     ],
   };

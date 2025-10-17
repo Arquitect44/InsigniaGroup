@@ -10,24 +10,29 @@ const milestones = [
     description: 'Established with a vision for vertically integrated development in New York City.',
   },
   {
-    year: '2010',
+    year: '2008',
     title: 'First Major Project',
-    description: 'Delivered first mixed-use development, setting the standard for quality and efficiency.',
+    description: 'Delivered first major development, setting the standard for quality and efficiency.',
   },
   {
     year: '2015',
-    title: 'Healthcare Expansion',
-    description: 'Entered healthcare facility development with NYU Langone partnership.',
+    title: 'First Hotel Project',
+    description: 'Entered hospitality development, expanding our vertically integrated capabilities.',
+  },
+  {
+    year: '2019',
+    title: 'Charter School Projects',
+    description: 'Began educational facility development, bringing expertise to the education sector.',
   },
   {
     year: '2020',
-    title: '43 Buildings',
-    description: 'Reached milestone of 43 completed landmark buildings across NYC.',
+    title: 'Healthcare Expansion',
+    description: 'Entered the healthcare development sector.',
   },
   {
     year: '2025',
-    title: 'Three Generations',
-    description: 'Family legacy continues with uncompromising commitment to excellence.',
+    title: '257 Units Under Construction',
+    description: 'Family legacy continues with 257 residential units actively under construction and 43 completed iconic buildings.',
   },
 ];
 

@@ -78,9 +78,7 @@ export default function CapabilityShowcase() {
           {capabilities.map((capability, index) => (
             <motion.div
               key={capability.number}
-              className={`grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start ${
-                index % 2 === 1 ? 'lg:flex-row-reverse' : ''
-              }`}
+              className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start"
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-100px' }}
@@ -91,7 +89,7 @@ export default function CapabilityShowcase() {
                 <p className="text-[#d4a574] font-semibold text-sm tracking-wider uppercase mb-3">
                   {capability.number}
                 </p>
-                <h2 className="text-[#1a1a1a] mb-4">
+                <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#1a1a1a] mb-4">
                   {capability.title}
                 </h2>
                 <p className="text-xl lg:text-2xl font-semibold text-gray-700 mb-6">
@@ -101,22 +99,22 @@ export default function CapabilityShowcase() {
                   {capability.description}
                 </p>
 
-                     {/* Metrics */}
-                <div className="grid grid-cols-3 gap-6 pt-8 border-t border-gray-200">
-                  {capability.metrics.map((metric) => (
-                    <div key={metric.label}>
-                      <div className="text-3xl font-bold text-[#d4a574] mb-2">
-                        {metric.value}
+                {/* Metrics */}
+                {capability.metrics && (
+                  <div className="grid grid-cols-3 gap-6 pt-8 border-t border-gray-200">
+                    {capability.metrics.map((metric) => (
+                      <div key={metric.label}>
+                        <div className="text-3xl font-bold text-[#d4a574] mb-2">
+                          {metric.value}
+                        </div>
+                        <div className="text-xs text-gray-600 uppercase tracking-wide">
+                          {metric.label}
+                        </div>
                       </div>
-                      <div className="text-xs text-gray-600 uppercase tracking-wide">
-                        {metric.label}
-                      </div>
-                    </div>
-                  ))}
-                </div>
+                    ))}
+                  </div>
+                )}
               </div>
-
-    
 
               {/* Right Column - Services List */}
               <div className={`bg-gray-50 p-8 lg:p-10 ${index % 2 === 1 ? 'lg:order-1' : ''}`}>

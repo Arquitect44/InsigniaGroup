@@ -99,7 +99,7 @@ export default function Difference() {
           transition={{ duration: 0.6 }}
         >
           <p className="text-xl text-gray-600 mb-8">
-            See our approach in action across 43 landmark buildings.
+            See our approach in action across 43 iconic buildings.
           </p>
           <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.98 }}>
             <Link

@@ -12,6 +12,7 @@ export default function Navigation() {
     { href: '/approach', label: 'OUR APPROACH' },
     { href: '/portfolio', label: 'PORTFOLIO' },
     { href: '/capabilities', label: 'CAPABILITIES' },
+    { href: '/about', label: 'ABOUT' },
     { href: '/contact', label: 'CONTACT' },
   ];
 
