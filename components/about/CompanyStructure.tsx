@@ -7,7 +7,7 @@ const companies = {
   parent: {
     name: 'Insignia Group',
     tagline: 'Vertically Integrated Real Estate Development',
-    description: 'Three generations of excellence delivering 43 iconic buildings throughout New York City.',
+    description: 'Three generations of excellence delivering 43 prestigious buildings throughout New York City.',
     services: [
       'Real Estate Development',
       'Investment & Acquisitions',
@@ -160,7 +160,7 @@ export default function CompanyStructure() {
           transition={{ delay: 0.4, duration: 0.8 }}
         >
           <p className="text-xl lg:text-2xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            This integrated structure allows us to control every aspect of development—ensuring quality, efficiency, and lasting value across all 43 iconic buildings.
+            This integrated structure allows us to control every aspect of development—ensuring quality, efficiency, and lasting value across all 43 prestigious buildings.
           </p>
         </motion.div>
       </div>

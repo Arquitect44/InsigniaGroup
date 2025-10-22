@@ -43,7 +43,7 @@ export default function FeaturedProjects() {
           viewport={{ once: true }}
           transition={{ delay: 0.2, duration: 0.6 }}
         >
-          Three generations of expertise delivering iconic developments across hotels, residential, healthcare, and commercial properties throughout New York City.
+          Three generations of expertise delivering prestigious developments across hotels, residential, healthcare, and commercial properties throughout New York City.
         </motion.p>
       </div>
 

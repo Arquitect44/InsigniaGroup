@@ -34,7 +34,7 @@ export default function ContactInfo() {
           viewport={{ once: true }}
           transition={{ delay: 0.2, duration: 0.6 }}
         >
-          Centrally located in Queens, serving our portfolio of iconic buildings across New York City.
+          Centrally located in Queens, serving our portfolio of prestigious buildings across New York City.
         </motion.p>
 
         <div className="grid grid-cols-1 gap-8 lg:gap-12 max-w-2xl">

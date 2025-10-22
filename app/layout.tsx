@@ -14,7 +14,7 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: "Insignia Group | Vertically Integrated Real Estate Development",
-  description: "From initial vision to final delivery, we control every stage of development—ensuring uncompromising quality across 43 iconic buildings throughout New York City. Three generations of vertically integrated real estate excellence.",
+  description: "From initial vision to final delivery, we control every stage of development—ensuring uncompromising quality across 43 prestigious buildings throughout New York City. Three generations of vertically integrated real estate excellence.",
   keywords: [
     "real estate development NYC",
     "vertical integration",
@@ -46,7 +46,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "Insignia Group | Vertically Integrated Real Estate Development",
-    description: "Three generations of excellence delivering iconic developments across hotels, residential, healthcare, and commercial properties throughout New York City.",
+    description: "Three generations of excellence delivering prestigious developments across hotels, residential, healthcare, and commercial properties throughout New York City.",
     type: "website",
     locale: "en_US",
     siteName: "Insignia Group",
@@ -62,7 +62,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Insignia Group | Vertically Integrated Real Estate Development",
-    description: "Three generations of excellence. 43 iconic buildings. Complete control from vision to delivery.",
+    description: "Three generations of excellence. 43 prestigious buildings. Complete control from vision to delivery.",
     images: ["/og-image.jpg"],
   },
   viewport: {

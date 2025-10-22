@@ -14,7 +14,7 @@ const capabilities = [
   },
   {
     title: 'Design',
-    description: 'In-house architectural excellence creating iconic, functional spaces.',
+    description: 'In-house architectural excellence creating prestigious, functional spaces.',
     number: '02',
     href: '/capabilities',
     image: '/images/design.webp',

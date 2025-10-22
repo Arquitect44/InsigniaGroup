@@ -156,7 +156,7 @@ export default function ProjectGrid() {
           transition={{ duration: 0.6 }}
         >
           <p className="text-gray-600 text-lg">
-            Showcasing 26 of our 43 iconic buildings.
+            Showcasing 26 of our 43 prestigious buildings.
             <br />
             <span className="text-sm mt-2 block">Each project reflecting our commitment to excellence and vertical integration.</span>
           </p>

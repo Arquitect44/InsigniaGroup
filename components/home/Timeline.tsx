@@ -32,7 +32,7 @@ const milestones = [
   {
     year: '2025',
     title: '257 Units Under Construction',
-    description: 'Family legacy continues with 257 residential units actively under construction and 43 completed iconic buildings.',
+    description: 'Family legacy continues with 257 residential units actively under construction and 43 completed prestigious buildings.',
   },
 ];
 

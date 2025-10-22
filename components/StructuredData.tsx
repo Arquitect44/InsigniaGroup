@@ -3,7 +3,7 @@ export default function StructuredData() {
     "@context": "https://schema.org",
     "@type": "Organization",
     "name": "Insignia Group",
-    "description": "Vertically integrated real estate development company with three generations of excellence delivering iconic buildings across New York City.",
+    "description": "Vertically integrated real estate development company with three generations of excellence delivering prestigious buildings across New York City.",
     "url": "https://insignia-group.vercel.app",
     "logo": "https://insignia-group.vercel.app/og-image.jpg",
     "foundingDate": "2005",
@@ -42,7 +42,7 @@ export default function StructuredData() {
     "@type": "RealEstateAgent",
     "name": "Insignia Group",
     "image": "https://insignia-group.vercel.app/og-image.jpg",
-    "description": "Three generations of vertically integrated real estate excellence delivering 43 iconic buildings throughout New York City.",
+    "description": "Three generations of vertically integrated real estate excellence delivering 43 prestigious buildings throughout New York City.",
     "address": {
       "@type": "PostalAddress",
       "addressLocality": "New York",
