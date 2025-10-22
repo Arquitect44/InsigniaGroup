@@ -1,6 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import Link from 'next/link';
 import Section from '../ui/Section';
 
 const companies = {
@@ -20,6 +21,7 @@ const companies = {
       name: "Jun's Construction",
       tagline: 'General Contracting Excellence',
       description: 'In-house construction arm ensuring uncompromising quality control from foundation to finish.',
+      website: 'https://junsconstruction.com/',
       services: [
         'General Contracting',
         'Construction Management',
@@ -31,11 +33,24 @@ const companies = {
       name: 'Super Plumbing & Building Supply',
       tagline: 'MEP Systems & Supply Chain',
       description: 'Integrated supply chain control delivering cost optimization and procurement efficiency.',
+      website: null, // Under construction
       services: [
         'MEP Systems',
         'Supply Chain Management',
         'Material Procurement',
         'Cost Optimization',
+      ],
+    },
+    {
+      name: 'Insignia Hotels',
+      tagline: 'Hospitality & Asset Management',
+      description: 'Self-developed and operated hotel portfolio delivering exceptional guest experiences and long-term value.',
+      website: 'https://www.insigniabrooklyn.com/',
+      services: [
+        'Hotel Development',
+        'Asset Management',
+        'Hospitality Operations',
+        'Brand Partnerships',
       ],
     },
   ],
@@ -105,49 +120,74 @@ export default function CompanyStructure() {
           </div>
 
           {/* Subsidiaries Grid */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 relative">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12 relative">
             {/* Horizontal connecting line for desktop */}
-            <div className="hidden lg:block absolute top-0 left-[12.5%] -translate-y-16 w-3/4 h-0.5 bg-[#d4a574]" />
+            <div className="hidden lg:block absolute top-0 left-[16.67%] -translate-y-16 w-2/3 h-0.5 bg-[#d4a574]" />
 
             {/* Vertical lines connecting to each subsidiary */}
-            <div className="hidden lg:block absolute top-0 left-[12.5%] -translate-y-16 w-0.5 h-16 bg-[#d4a574]" />
-            <div className="hidden lg:block absolute top-0 right-[12.5%] -translate-y-16 w-0.5 h-16 bg-[#d4a574]" />
+            <div className="hidden lg:block absolute top-0 left-[16.67%] -translate-y-16 w-0.5 h-16 bg-[#d4a574]" />
+            <div className="hidden lg:block absolute top-0 left-1/2 -translate-x-1/2 -translate-y-16 w-0.5 h-16 bg-[#d4a574]" />
+            <div className="hidden lg:block absolute top-0 right-[16.67%] -translate-y-16 w-0.5 h-16 bg-[#d4a574]" />
 
-            {companies.subsidiaries.map((company, index) => (
-              <motion.div
-                key={company.name}
-                className="bg-white border-2 border-gray-200 p-6 lg:p-8 shadow-lg hover:shadow-2xl hover:border-[#d4a574] transition-all duration-300 group"
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.2, duration: 0.8 }}
-              >
-                <h3 className="text-2xl lg:text-3xl font-bold text-[#1a1a1a] mb-3 group-hover:text-[#d4a574] transition-colors">
-                  {company.name}
-                </h3>
-                <p className="text-[#d4a574] text-base lg:text-lg font-semibold mb-4">
-                  {company.tagline}
-                </p>
-                <p className="text-gray-600 leading-relaxed mb-6">
-                  {company.description}
-                </p>
-                <ul className="space-y-3">
-                  {company.services.map((service, idx) => (
-                    <li
-                      key={idx}
-                      className="flex items-start gap-3 group/item"
+            {companies.subsidiaries.map((company, index) => {
+              const CardContent = (
+                <div className="bg-white border-2 border-gray-200 p-6 lg:p-8 shadow-lg hover:shadow-2xl hover:border-[#d4a574] transition-all duration-300 group h-full">
+                  <h3 className="text-2xl lg:text-3xl font-bold text-[#1a1a1a] mb-3 group-hover:text-[#d4a574] transition-colors">
+                    {company.name}
+                  </h3>
+                  <p className="text-[#d4a574] text-base lg:text-lg font-semibold mb-4">
+                    {company.tagline}
+                  </p>
+                  <p className="text-gray-600 leading-relaxed mb-6">
+                    {company.description}
+                  </p>
+                  <ul className="space-y-3">
+                    {company.services.map((service, idx) => (
+                      <li
+                        key={idx}
+                        className="flex items-start gap-3 group/item"
+                      >
+                        <span className="text-[#d4a574] mt-1 flex-shrink-0 group-hover/item:scale-125 transition-transform duration-300">
+                          →
+                        </span>
+                        <span className="text-gray-700 group-hover/item:text-[#1a1a1a] transition-colors duration-300">
+                          {service}
+                        </span>
+                      </li>
+                    ))}
+                  </ul>
+                  {company.website && (
+                    <div className="mt-6 text-[#d4a574] text-sm font-semibold">
+                      Visit Website →
+                    </div>
+                  )}
+                </div>
+              );
+
+              return (
+                <motion.div
+                  key={company.name}
+                  className="relative"
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.2, duration: 0.8 }}
+                >
+                  {company.website ? (
+                    <Link
+                      href={company.website}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="block h-full"
                     >
-                      <span className="text-[#d4a574] mt-1 flex-shrink-0 group-hover/item:scale-125 transition-transform duration-300">
-                        →
-                      </span>
-                      <span className="text-gray-700 group-hover/item:text-[#1a1a1a] transition-colors duration-300">
-                        {service}
-                      </span>
-                    </li>
-                  ))}
-                </ul>
-              </motion.div>
-            ))}
+                      {CardContent}
+                    </Link>
+                  ) : (
+                    CardContent
+                  )}
+                </motion.div>
+              );
+            })}
           </div>
         </div>
 
