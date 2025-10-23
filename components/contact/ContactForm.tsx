@@ -39,7 +39,7 @@ export default function ContactForm() {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          access_key: 'YOUR_ACCESS_KEY', // Get this from web3forms.com
+          access_key: process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY,
           subject: `New Contact Inquiry: ${formData.inquiryType}`,
           from_name: formData.name,
           ...formData,
