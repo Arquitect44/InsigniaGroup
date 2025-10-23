@@ -45,7 +45,7 @@ const companies = {
       name: 'Insignia Hotels',
       tagline: 'Hospitality & Asset Management',
       description: 'Self-developed and operated hotel portfolio delivering exceptional guest experiences and long-term value.',
-      website: 'https://www.insigniabrooklyn.com/',
+      website: 'https://www.ihg.com/avidhotels/hotels/us/en/brooklyn/nycav/hoteldetail',
       services: [
         'Hotel Development',
         'Asset Management',
