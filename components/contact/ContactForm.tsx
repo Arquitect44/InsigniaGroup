@@ -42,6 +42,7 @@ export default function ContactForm() {
           access_key: process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY,
           subject: `New Contact Inquiry: ${formData.inquiryType}`,
           from_name: formData.name,
+          cc: process.env.NEXT_PUBLIC_CLIENT_EMAIL, // Optional: CC to client
           ...formData,
         }),
       });
