@@ -24,7 +24,7 @@ const businesses = [
     name: 'Super Plumbing & Building Supply',
     tagline: 'MEP Systems & Supply Chain',
     description: 'Integrated supply chain control delivering cost optimization and procurement efficiency.',
-    website: null, // Under construction
+    website: '/super-plumbing',
     services: [
       'MEP Systems',
       'Supply Chain Management',
@@ -195,6 +195,8 @@ export default function FeaturedBusinesses() {
                   </div>
                 );
 
+                const isExternalLink = company.website?.startsWith('http');
+
                 return (
                   <motion.div
                     key={company.id}
@@ -207,8 +209,10 @@ export default function FeaturedBusinesses() {
                     {company.website ? (
                       <Link
                         href={company.website}
-                        target="_blank"
-                        rel="noopener noreferrer"
+                        {...(isExternalLink && {
+                          target: "_blank",
+                          rel: "noopener noreferrer"
+                        })}
                         className="block h-full"
                       >
                         {CardContent}
