@@ -57,8 +57,8 @@ export default function WhatWeDo() {
           viewport={{ once: true }}
           transition={{ delay: 0.2, duration: 0.6 }}
         >
-          From land acquisition to long-term asset management, our integrated model delivers
-          unparalleled quality, efficiency, and accountability. One team. One vision. Zero compromises.
+          From land acquisition, construction, and development to long-term asset management, our integrated model delivers
+          unparalleled quality, efficiency, and accountability to deliver prestigious projects. One Team. One Vision. Zero Compromises.
         </motion.p>
       </div>
 
