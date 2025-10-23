@@ -71,7 +71,7 @@ export default function Expertise() {
           viewport={{ once: true }}
           transition={{ delay: 0.2, duration: 0.6 }}
         >
-          Two decades building across New York City&apos;s most challenging markets.
+          Two decades building across New York City's most challenging markets.
         </motion.p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-16">

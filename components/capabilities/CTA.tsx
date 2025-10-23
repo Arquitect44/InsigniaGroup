@@ -19,7 +19,7 @@ export default function CTA() {
             Ready to discuss <span className="font-bold">your project?</span>
           </h2>
           <p className="text-xl md:text-2xl text-gray-600 font-light leading-relaxed mb-12">
-            Whether you&apos;re seeking a development partner, exploring joint ventures, or considering our management services, we&apos;d welcome the conversation.
+            Whether you're seeking a development partner, exploring joint ventures, or considering our management services, we'd welcome the conversation.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-6 justify-center">

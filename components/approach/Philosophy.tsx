@@ -38,10 +38,10 @@ export default function Philosophy() {
               Our <span className="font-bold">Philosophy</span>
             </h2>
             <p className="text-xl md:text-2xl lg:text-3xl text-gray-600 font-light leading-relaxed mb-8">
-              Quality isn&apos;t an accident. It&apos;s the result of intention, experience, and complete control over every decision.
+              Quality isn't an accident. It's the result of intention, experience, and complete control over every decision.
             </p>
             <p className="text-lg md:text-xl text-gray-600 leading-relaxed">
-              For three generations, our family has built prestigious properties across New York City. We&apos;ve learned that the only way to guarantee excellence is to own every stage of the process—from identifying the opportunity to managing the completed asset.
+              For three generations, our family has built prestigious properties across New York City. We've learned that the only way to guarantee excellence is to own every stage of the process—from identifying the opportunity to managing the completed asset.
             </p>
           </motion.div>
 

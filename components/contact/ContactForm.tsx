@@ -230,7 +230,7 @@ export default function ContactForm() {
                   animate={{ opacity: 1, y: 0 }}
                 >
                   <p className="text-green-800 font-semibold">Message sent successfully!</p>
-                  <p className="text-green-700 text-sm mt-1">We&apos;ll get back to you within 24 business hours.</p>
+                  <p className="text-green-700 text-sm mt-1">We'll get back to you within 24 business hours.</p>
                 </motion.div>
               )}
 
