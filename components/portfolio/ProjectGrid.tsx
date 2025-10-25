@@ -81,16 +81,11 @@ export default function ProjectGrid() {
             exit={{ opacity: 0 }}
             transition={{ duration: 0.5 }}
           >
-            {filteredProjects.map((project, index) => (
-              <motion.div
-                key={project.id}
-                className="group bg-white shadow-sm hover:shadow-2xl transition-all duration-500"
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.05, duration: 0.5 }}
-              >
-                {/* Image */}
-                <div className="relative aspect-[4/3] overflow-hidden bg-gray-200">
+            {filteredProjects.map((project, index) => {
+              const ProjectCard = (
+                <>
+                  {/* Image */}
+                  <div className="relative aspect-[4/3] overflow-hidden bg-gray-200">
                   <img
                     src={project.heroImage}
                     alt={project.title}
@@ -104,6 +99,11 @@ export default function ProjectGrid() {
                   {project.status === 'in-progress' && (
                     <div className="absolute top-4 right-4 bg-white text-[#1a1a1a] px-3 py-1 text-xs font-bold uppercase tracking-wider">
                       Under Construction
+                    </div>
+                  )}
+                  {project.status === 'future' && (
+                    <div className="absolute top-4 right-4 bg-white text-[#1a1a1a] px-3 py-1 text-xs font-bold uppercase tracking-wider">
+                      Under Development
                     </div>
                   )}
                 </div>
@@ -141,9 +141,39 @@ export default function ProjectGrid() {
                       </p>
                     </div>
                   </div>
+                  {project.website && (
+                    <div className="mt-6 text-[#d4a574] text-sm font-semibold flex items-center gap-2">
+                      Visit Website
+                      <span className="group-hover:translate-x-1 transition-transform duration-300">→</span>
+                    </div>
+                  )}
                 </div>
-              </motion.div>
-            ))}
+                </>
+              );
+
+              return (
+                <motion.div
+                  key={project.id}
+                  className="group bg-white shadow-sm hover:shadow-2xl transition-all duration-500"
+                  initial={{ opacity: 0, y: 30 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: index * 0.05, duration: 0.5 }}
+                >
+                  {project.website ? (
+                    <a
+                      href={project.website}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="block h-full"
+                    >
+                      {ProjectCard}
+                    </a>
+                  ) : (
+                    ProjectCard
+                  )}
+                </motion.div>
+              );
+            })}
           </motion.div>
         </AnimatePresence>
 

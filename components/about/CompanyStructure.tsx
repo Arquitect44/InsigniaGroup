@@ -18,6 +18,38 @@ const companies = {
   },
   subsidiaries: [
     {
+      name: 'Real Estate Investment and Development',
+      tagline: 'Strategic Acquisitions & Development',
+      description: 'Identifying and developing high-value real estate opportunities across New York City through strategic investment and comprehensive development expertise.',
+      services: [
+        'Investment Analysis',
+        'Site Acquisition',
+        'Development Planning',
+        'Asset Positioning',
+      ],
+    },
+    {
+      name: 'Hotel Assets',
+      tagline: 'Hospitality & Asset Management',
+      description: 'Self-developed and operated hotel portfolio delivering exceptional guest experiences and long-term value.',
+      hotels: [
+        {
+          name: 'Insignia Hotel Brooklyn',
+          website: 'https://www.insigniabrooklyn.com/',
+        },
+        {
+          name: 'AVID Hotel Brooklyn',
+          website: 'https://www.ihg.com/avidhotels/hotels/us/en/brooklyn/nycav/hoteldetail',
+        },
+      ],
+      services: [
+        'Hotel Development',
+        'Asset Management',
+        'Hospitality Operations',
+        'Brand Partnerships',
+      ],
+    },
+    {
       name: "Jun's Construction",
       tagline: 'General Contracting Excellence',
       description: 'In-house construction arm ensuring uncompromising quality control from foundation to finish.',
@@ -39,18 +71,6 @@ const companies = {
         'Supply Chain Management',
         'Material Procurement',
         'Cost Optimization',
-      ],
-    },
-    {
-      name: 'Insignia Hotels',
-      tagline: 'Hospitality & Asset Management',
-      description: 'Self-developed and operated hotel portfolio delivering exceptional guest experiences and long-term value.',
-      website: 'https://www.ihg.com/avidhotels/hotels/us/en/brooklyn/nycav/hoteldetail',
-      services: [
-        'Hotel Development',
-        'Asset Management',
-        'Hospitality Operations',
-        'Brand Partnerships',
       ],
     },
   ],
@@ -84,7 +104,7 @@ export default function CompanyStructure() {
         <div className="relative">
           {/* Parent Company - Insignia Group */}
           <motion.div
-            className="max-w-3xl mx-auto mb-16"
+            className="max-w-3xl mx-auto mb-0"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -114,58 +134,22 @@ export default function CompanyStructure() {
             </div>
           </motion.div>
 
-          {/* Connecting Lines */}
-          <div className="relative flex justify-center mb-16">
-            <div className="w-0.5 h-16 bg-[#d4a574]" />
+          {/* Organizational Chart Connecting Lines */}
+          <div className="relative h-32 mb-0">
+            {/* Vertical line from parent down */}
+            <div className="absolute left-1/2 top-0 w-0.5 h-16 bg-[#d4a574] -translate-x-1/2" />
+
+            {/* Horizontal line connecting to subsidiaries - desktop only */}
+            <div className="hidden lg:block absolute left-1/4 top-16 w-1/2 h-0.5 bg-[#d4a574]" />
+
+            {/* Vertical lines dropping to each column center - desktop only */}
+            <div className="hidden lg:block absolute left-1/4 top-16 w-0.5 h-16 bg-[#d4a574]" />
+            <div className="hidden lg:block absolute right-1/4 top-16 w-0.5 h-16 bg-[#d4a574]" />
           </div>
 
           {/* Subsidiaries Grid */}
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12 relative">
-            {/* Horizontal connecting line for desktop */}
-            <div className="hidden lg:block absolute top-0 left-[16.67%] -translate-y-16 w-2/3 h-0.5 bg-[#d4a574]" />
-
-            {/* Vertical lines connecting to each subsidiary */}
-            <div className="hidden lg:block absolute top-0 left-[16.67%] -translate-y-16 w-0.5 h-16 bg-[#d4a574]" />
-            <div className="hidden lg:block absolute top-0 left-1/2 -translate-x-1/2 -translate-y-16 w-0.5 h-16 bg-[#d4a574]" />
-            <div className="hidden lg:block absolute top-0 right-[16.67%] -translate-y-16 w-0.5 h-16 bg-[#d4a574]" />
-
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 lg:gap-12">
             {companies.subsidiaries.map((company, index) => {
-              const CardContent = (
-                <div className="bg-white border-2 border-gray-200 p-6 lg:p-8 shadow-lg hover:shadow-2xl hover:border-[#d4a574] transition-all duration-300 group h-full">
-                  <h3 className="text-2xl lg:text-3xl font-bold text-[#1a1a1a] mb-3 group-hover:text-[#d4a574] transition-colors">
-                    {company.name}
-                  </h3>
-                  <p className="text-[#d4a574] text-base lg:text-lg font-semibold mb-4">
-                    {company.tagline}
-                  </p>
-                  <p className="text-gray-600 leading-relaxed mb-6">
-                    {company.description}
-                  </p>
-                  <ul className="space-y-3">
-                    {company.services.map((service, idx) => (
-                      <li
-                        key={idx}
-                        className="flex items-start gap-3 group/item"
-                      >
-                        <span className="text-[#d4a574] mt-1 flex-shrink-0 group-hover/item:scale-125 transition-transform duration-300">
-                          →
-                        </span>
-                        <span className="text-gray-700 group-hover/item:text-[#1a1a1a] transition-colors duration-300">
-                          {service}
-                        </span>
-                      </li>
-                    ))}
-                  </ul>
-                  {company.website && (
-                    <div className="mt-6 text-[#d4a574] text-sm font-semibold">
-                      Visit Website →
-                    </div>
-                  )}
-                </div>
-              );
-
-              const isExternalLink = company.website?.startsWith('http');
-
               return (
                 <motion.div
                   key={company.name}
@@ -175,20 +159,63 @@ export default function CompanyStructure() {
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.2, duration: 0.8 }}
                 >
-                  {company.website ? (
-                    <Link
-                      href={company.website}
-                      {...(isExternalLink && {
-                        target: "_blank",
-                        rel: "noopener noreferrer"
-                      })}
-                      className="block h-full"
-                    >
-                      {CardContent}
-                    </Link>
-                  ) : (
-                    CardContent
-                  )}
+                  <div className="bg-white border-2 border-gray-200 p-6 lg:p-8 shadow-lg hover:shadow-2xl hover:border-[#d4a574] transition-all duration-300 group h-full">
+                    <h3 className="text-2xl lg:text-3xl font-bold text-[#1a1a1a] mb-3 group-hover:text-[#d4a574] transition-colors">
+                      {company.name}
+                    </h3>
+                    <p className="text-[#d4a574] text-base lg:text-lg font-semibold mb-4">
+                      {company.tagline}
+                    </p>
+                    <p className="text-gray-600 leading-relaxed mb-6">
+                      {company.description}
+                    </p>
+                    <ul className="space-y-3 mb-6">
+                      {company.services.map((service, idx) => (
+                        <li
+                          key={idx}
+                          className="flex items-start gap-3 group/item"
+                        >
+                          <span className="text-[#d4a574] mt-1 flex-shrink-0 group-hover/item:scale-125 transition-transform duration-300">
+                            →
+                          </span>
+                          <span className="text-gray-700 group-hover/item:text-[#1a1a1a] transition-colors duration-300">
+                            {service}
+                          </span>
+                        </li>
+                      ))}
+                    </ul>
+
+                    {/* Hotel Buttons */}
+                    {company.hotels && company.hotels.length > 0 && (
+                      <div className="space-y-3 mt-6">
+                        {company.hotels.map((hotel, hotelIdx) => (
+                          <Link
+                            key={hotelIdx}
+                            href={hotel.website}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="block w-full border-2 border-[#d4a574] bg-transparent hover:bg-[#d4a574] text-[#d4a574] hover:text-white py-3 px-4 text-center font-semibold transition-all duration-300"
+                          >
+                            {hotel.name} →
+                          </Link>
+                        ))}
+                      </div>
+                    )}
+
+                    {/* Single Website Link (for other companies) */}
+                    {company.website && !company.hotels && (
+                      <Link
+                        href={company.website}
+                        {...(company.website.startsWith('http') && {
+                          target: "_blank",
+                          rel: "noopener noreferrer"
+                        })}
+                        className="block w-full border-2 border-[#d4a574] bg-transparent hover:bg-[#d4a574] text-[#d4a574] hover:text-white py-3 px-4 text-center font-semibold transition-all duration-300 mt-6"
+                      >
+                        Visit Website →
+                      </Link>
+                    )}
+                  </div>
                 </motion.div>
               );
             })}

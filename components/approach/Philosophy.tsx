@@ -18,7 +18,7 @@ const principles = [
   },
   {
     title: 'New York Focus',
-    description: 'Deep local expertise and relationships built over 20 years. We know this market intimately.',
+    description: 'Deep local expertise and relationships built over 30 years. We know this market intimately.',
   },
 ];
 

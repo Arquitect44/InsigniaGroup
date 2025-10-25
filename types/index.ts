@@ -20,6 +20,7 @@ export interface Project {
   description: string;
   challenge?: string;
   insigniaAdvantage: string;
+  website?: string;
   keyFeatures: string[];
   gallery: {
     url: string;

@@ -8,6 +8,40 @@ import Section from '../ui/Section';
 const businesses = [
   {
     id: 1,
+    name: 'Real Estate Investment and Development',
+    tagline: 'Strategic Acquisitions & Development',
+    description: 'Identifying and developing high-value real estate opportunities across New York City through strategic investment and comprehensive development expertise.',
+    services: [
+      'Investment Analysis',
+      'Site Acquisition',
+      'Development Planning',
+      'Asset Positioning',
+    ],
+  },
+  {
+    id: 2,
+    name: 'Hotel Assets',
+    tagline: 'Hospitality & Asset Management',
+    description: 'Self-developed and operated hotel portfolio delivering exceptional guest experiences and long-term value.',
+    hotels: [
+      {
+        name: 'Insignia Hotel Brooklyn',
+        website: 'https://www.insigniabrooklyn.com/',
+      },
+      {
+        name: 'AVID Hotel Brooklyn',
+        website: 'https://www.ihg.com/avidhotels/hotels/us/en/brooklyn/nycav/hoteldetail',
+      },
+    ],
+    services: [
+      'Hotel Development',
+      'Asset Management',
+      'Hospitality Operations',
+      'Brand Partnerships',
+    ],
+  },
+  {
+    id: 3,
     name: "Jun's Construction",
     tagline: 'General Contracting Excellence',
     description: 'In-house construction arm ensuring uncompromising quality control from foundation to finish.',
@@ -20,7 +54,7 @@ const businesses = [
     ],
   },
   {
-    id: 2,
+    id: 4,
     name: 'Super Plumbing & Building Supply',
     tagline: 'MEP Systems & Supply Chain',
     description: 'Integrated supply chain control delivering cost optimization and procurement efficiency.',
@@ -30,19 +64,6 @@ const businesses = [
       'Supply Chain Management',
       'Material Procurement',
       'Cost Optimization',
-    ],
-  },
-  {
-    id: 3,
-    name: 'Insignia Hotels',
-    tagline: 'Hospitality & Asset Management',
-    description: 'Self-developed and operated hotel portfolio delivering exceptional guest experiences and long-term value.',
-    website: 'https://www.ihg.com/avidhotels/hotels/us/en/brooklyn/nycav/hoteldetail',
-    services: [
-      'Hotel Development',
-      'Asset Management',
-      'Hospitality Operations',
-      'Brand Partnerships',
     ],
   },
 ];
@@ -127,7 +148,7 @@ export default function FeaturedBusinesses() {
           <div className="relative">
             {/* Parent Company */}
             <motion.div
-              className="max-w-2xl mx-auto mb-[var(--space-12)]"
+              className="max-w-2xl mx-auto mb-0"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -143,60 +164,23 @@ export default function FeaturedBusinesses() {
               </div>
             </motion.div>
 
-            {/* Connecting Line */}
-            <motion.div
-              className="w-0.5 h-[var(--space-12)] bg-[var(--color-gold)] mx-auto mb-[var(--space-12)]"
-              initial={{ scaleY: 0 }}
-              whileInView={{ scaleY: 1 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.3, duration: 0.6 }}
-            />
+            {/* Organizational Chart Connecting Lines */}
+            <div className="relative h-32 mb-0">
+              {/* Vertical line from parent down */}
+              <div className="absolute left-1/2 top-0 w-0.5 h-16 bg-[var(--color-gold)] -translate-x-1/2" />
+
+              {/* Horizontal line connecting to subsidiaries - desktop only */}
+              <div className="hidden lg:block absolute left-1/4 top-16 w-1/2 h-0.5 bg-[var(--color-gold)]" />
+
+              {/* Vertical lines dropping to each column center - desktop only */}
+              <div className="hidden lg:block absolute left-1/4 top-16 w-0.5 h-16 bg-[var(--color-gold)]" />
+              <div className="hidden lg:block absolute right-1/4 top-16 w-0.5 h-16 bg-[var(--color-gold)]" />
+            </div>
 
             {/* Subsidiaries Grid */}
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-[var(--space-8)] lg:gap-[var(--space-12)] relative">
-              {/* Horizontal connecting line for desktop */}
-              <div className="hidden lg:block absolute top-0 left-[16.67%] -translate-y-[var(--space-16)] w-2/3 h-0.5 bg-[var(--color-gold)]" />
-
-              {/* Vertical lines connecting to each subsidiary */}
-              <div className="hidden lg:block absolute top-0 left-[16.67%] -translate-y-[var(--space-16)] w-0.5 h-[var(--space-16)] bg-[var(--color-gold)]" />
-              <div className="hidden lg:block absolute top-0 left-1/2 -translate-x-1/2 -translate-y-[var(--space-16)] w-0.5 h-[var(--space-16)] bg-[var(--color-gold)]" />
-              <div className="hidden lg:block absolute top-0 right-[16.67%] -translate-y-[var(--space-16)] w-0.5 h-[var(--space-16)] bg-[var(--color-gold)]" />
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-[var(--space-8)] lg:gap-[var(--space-12)]">
 
               {businesses.map((company, index) => {
-                const CardContent = (
-                  <div className="bg-white/5 border-2 border-gray-700 p-[var(--space-6)] lg:p-[var(--space-8)] hover:border-[var(--color-gold)] hover:shadow-2xl transition-all duration-[var(--duration-normal)] group h-full">
-                    <h3 className="text-xl lg:text-2xl font-bold text-white mb-[var(--space-3)] group-hover:text-[var(--color-gold)] transition-colors">
-                      {company.name}
-                    </h3>
-                    <p className="text-[var(--color-gold)] text-sm lg:text-base font-semibold mb-[var(--space-4)]">
-                      {company.tagline}
-                    </p>
-                    {company.description && (
-                      <p className="text-gray-400 text-sm lg:text-base mb-[var(--space-4)] leading-relaxed">
-                        {company.description}
-                      </p>
-                    )}
-                    <ul className="space-y-[var(--space-2)]">
-                      {company.services.map((service, idx) => (
-                        <li
-                          key={idx}
-                          className="flex items-start gap-[var(--space-2)] text-gray-400 text-sm lg:text-base"
-                        >
-                          <span className="text-[var(--color-gold)] mt-1" aria-hidden="true">→</span>
-                          <span>{service}</span>
-                        </li>
-                      ))}
-                    </ul>
-                    {company.website && (
-                      <div className="mt-[var(--space-4)] text-[var(--color-gold)] text-sm font-semibold">
-                        Visit Website →
-                      </div>
-                    )}
-                  </div>
-                );
-
-                const isExternalLink = company.website?.startsWith('http');
-
                 return (
                   <motion.div
                     key={company.id}
@@ -206,20 +190,61 @@ export default function FeaturedBusinesses() {
                     viewport={{ once: true }}
                     transition={{ delay: 0.7 + index * 0.2, duration: 0.8 }}
                   >
-                    {company.website ? (
-                      <Link
-                        href={company.website}
-                        {...(isExternalLink && {
-                          target: "_blank",
-                          rel: "noopener noreferrer"
-                        })}
-                        className="block h-full"
-                      >
-                        {CardContent}
-                      </Link>
-                    ) : (
-                      CardContent
-                    )}
+                    <div className="bg-white/5 border-2 border-gray-700 p-[var(--space-6)] lg:p-[var(--space-8)] hover:border-[var(--color-gold)] hover:shadow-2xl transition-all duration-[var(--duration-normal)] group h-full">
+                      <h3 className="text-xl lg:text-2xl font-bold text-white mb-[var(--space-3)] group-hover:text-[var(--color-gold)] transition-colors">
+                        {company.name}
+                      </h3>
+                      <p className="text-[var(--color-gold)] text-sm lg:text-base font-semibold mb-[var(--space-4)]">
+                        {company.tagline}
+                      </p>
+                      {company.description && (
+                        <p className="text-gray-400 text-sm lg:text-base mb-[var(--space-4)] leading-relaxed">
+                          {company.description}
+                        </p>
+                      )}
+                      <ul className="space-y-[var(--space-2)] mb-[var(--space-4)]">
+                        {company.services.map((service, idx) => (
+                          <li
+                            key={idx}
+                            className="flex items-start gap-[var(--space-2)] text-gray-400 text-sm lg:text-base"
+                          >
+                            <span className="text-[var(--color-gold)] mt-1" aria-hidden="true">→</span>
+                            <span>{service}</span>
+                          </li>
+                        ))}
+                      </ul>
+
+                      {/* Hotel Buttons */}
+                      {company.hotels && company.hotels.length > 0 && (
+                        <div className="space-y-3 mt-[var(--space-4)]">
+                          {company.hotels.map((hotel, hotelIdx) => (
+                            <Link
+                              key={hotelIdx}
+                              href={hotel.website}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="block w-full border-2 border-[#d4a574] bg-transparent hover:bg-[#d4a574] text-[#d4a574] hover:text-white py-3 px-4 text-center font-semibold transition-all duration-300"
+                            >
+                              {hotel.name} →
+                            </Link>
+                          ))}
+                        </div>
+                      )}
+
+                      {/* Single Website Link (for other companies) */}
+                      {company.website && !company.hotels && (
+                        <Link
+                          href={company.website}
+                          {...(company.website.startsWith('http') && {
+                            target: "_blank",
+                            rel: "noopener noreferrer"
+                          })}
+                          className="block w-full border-2 border-[#d4a574] bg-transparent hover:bg-[#d4a574] text-[#d4a574] hover:text-white py-3 px-4 text-center font-semibold transition-all duration-300 mt-[var(--space-4)]"
+                        >
+                          Visit Website →
+                        </Link>
+                      )}
+                    </div>
                   </motion.div>
                 );
               })}
