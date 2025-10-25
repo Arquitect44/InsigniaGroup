@@ -20,7 +20,7 @@ const businesses = [
   },
   {
     id: 2,
-    name: 'Hotel Assets',
+    name: 'Insignia Group Hotel Assets',
     tagline: 'Hospitality & Asset Management',
     description: 'Self-developed and operated hotel portfolio delivering exceptional guest experiences and long-term value.',
     hotels: [

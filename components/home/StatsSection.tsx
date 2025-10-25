@@ -25,7 +25,7 @@ const stats = [
     decimals: 1,
   },
   {
-    number: 20,
+    number: 30,
     label: 'Years of Excellence',
     suffix: '+',
     decimals: 0,

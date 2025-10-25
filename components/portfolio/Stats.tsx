@@ -8,8 +8,9 @@ import Section from '../ui/Section';
 const stats = [
   { number: 43, label: 'Buildings Completed', suffix: '', decimals: 0 },
   { number: 3.3, label: 'Million SF', suffix: 'M', decimals: 1 },
-  { number: 257, label: 'Projects under construction', suffix: '+', decimals: 0 },
-  { number: 20, label: 'Years Experience', suffix: '', decimals: 0 },
+  { number: 3, label: 'Projects Under Construction', suffix: '', decimals: 0 },
+  { number: 257, label: 'Units', suffix: '+', decimals: 0 },
+  { number: 30, label: 'Years Experience', suffix: '+', decimals: 0 },
 ];
 
 function Counter({ value, decimals, suffix }: { value: number; decimals: number; suffix?: string }) {
@@ -40,7 +41,7 @@ export default function Stats() {
   return (
     <Section background="white" containerSize="xl" noPadding>
       <div className="max-w-[2000px] mx-auto py-10 md:py-12 lg:py-16">
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
           {stats.map((stat, index) => (
             <motion.div
               key={stat.label}
