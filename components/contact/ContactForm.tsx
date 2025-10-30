@@ -31,7 +31,7 @@ export default function ContactForm() {
 
     try {
       // Using Web3Forms - Get your access key at https://web3forms.com
-      // Just enter your email (info@insigniagroup.com) to get the key
+      // Just enter your email (cl@junsconstruction.com) to get the key
       // Replace 'YOUR_ACCESS_KEY' with your actual key
       const response = await fetch('https://api.web3forms.com/submit', {
         method: 'POST',

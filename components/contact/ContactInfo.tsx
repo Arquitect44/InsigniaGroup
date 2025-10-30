@@ -9,7 +9,7 @@ const offices = [
     address: '122-03 14th Ave',
     city: 'College Point, NY 11356',
     phone: '(718) 888-1881',
-    email: 'info@insigniagroup.com',
+    email: 'cl@junsconstruction.com',
   },
 ];
 

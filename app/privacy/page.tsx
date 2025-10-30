@@ -47,7 +47,7 @@ export default function PrivacyPage() {
                   <p className="mb-2">122-03 14th Avenue</p>
                   <p className="mb-2">College Point, NY 11356</p>
                   <p className="mb-2">Phone: (718) 366-6789</p>
-                  <p className="mb-2">Email: info@insigniagroup.com</p>
+                  <p className="mb-2">Email: cl@junsconstruction.com</p>
                 </div>
               </section>
 
@@ -407,7 +407,7 @@ export default function PrivacyPage() {
                   <p className="mb-2"><strong>Insignia Group - Privacy Inquiries</strong></p>
                   <p className="mb-2">122-03 14th Avenue, College Point, NY 11356</p>
                   <p className="mb-2">Phone: (718) 366-6789</p>
-                  <p className="mb-2">Email: info@insigniagroup.com</p>
+                  <p className="mb-2">Email: cl@junsconstruction.com</p>
                 </div>
               </section>
             </div>

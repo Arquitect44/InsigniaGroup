@@ -25,7 +25,7 @@ export async function POST(request: Request) {
     // In production, send email here
     // Example with SendGrid/Resend:
     // await sendEmail({
-    //   to: 'info@insigniagroup.com',
+    //   to: 'cl@junsconstruction.com',
     //   subject: `New Contact Form: ${inquiryType}`,
     //   html: `
     //     <h2>New Contact Form Submission</h2>
